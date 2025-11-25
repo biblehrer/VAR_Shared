@@ -9290,6 +9290,7 @@ GameObject:
   - component: {fileID: 8832854036806420173}
   - component: {fileID: 8832854036806420175}
   - component: {fileID: 8832854036806420174}
+  - component: {fileID: 8832854036806420176}
   m_Layer: 0
   m_Name: Phone_White
   m_TagString: Untagged
@@ -27516,6 +27517,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8832854036806420176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196490519495694152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f505892f2c2698a498235070d6ab9ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateAction: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!4 &8844734741006463190
 Transform:
   m_ObjectHideFlags: 0
