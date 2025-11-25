@@ -25,10 +25,11 @@ public class TriggerAnimation : MonoBehaviour
     {
         if (activateAction != null && activateAction.action.WasPressedThisFrame())
         {
-            GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>().material.color = Color.white;
-            print(GetComponentsInChildren<Transform>()[1].name);
-            print(GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>().material.color);
-            print("Action");
+            Renderer obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
+            if (obj.material.color == Color.black)
+                obj.material.color = Color.white;
+            else
+                obj.material.color = Color.black;
 
         }
     }
