@@ -23,15 +23,8 @@ public class TriggerAnimation : MonoBehaviour
     private void Start()
     {
         obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
-        if (obj.material == camMaterial)
+        if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
         {
-            print("OffV1");
-            obj.material = blackMaterial;
-            cam.gameObject.SetActive(false);
-        }
-        if (obj.material.name == camMaterial.name)
-        {
-            print("OffV2");
             obj.material = blackMaterial;
             cam.gameObject.SetActive(false);
         }
@@ -42,7 +35,7 @@ public class TriggerAnimation : MonoBehaviour
         print(hand);
         if (activateActionRight.action.WasPressedThisFrame() && hand == 1)
         {
-            if (obj.material == camMaterial)
+            if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
             {
                 print("Off");
                 obj.material = blackMaterial;
@@ -57,7 +50,7 @@ public class TriggerAnimation : MonoBehaviour
         }
         if (activateActionLeft.action.WasPressedThisFrame() && hand == -1)
         {
-            if (obj.material == camMaterial)
+            if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
             {
                 print("Off");
                 obj.material = blackMaterial;
