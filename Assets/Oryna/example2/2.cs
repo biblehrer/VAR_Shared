@@ -1,7 +1,5 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.InputSystem;
-// если в сгенерированном классе есть namespace, допиши его здесь:
-// using MyGame;
 
 public class PlayerController : MonoBehaviour
 {
@@ -66,3 +64,4 @@ public class PlayerController : MonoBehaviour
         _isGrounded = true;
     }
 }
+*/
