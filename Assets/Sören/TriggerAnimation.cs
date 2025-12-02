@@ -22,27 +22,35 @@ public class TriggerAnimation : MonoBehaviour
 
     private void Start()
     {
-        Renderer obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
+        obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
         if (obj.material == camMaterial)
         {
+            print("OffV1");
             obj.material = blackMaterial;
             cam.gameObject.SetActive(false);
         }
-        print(obj.material);
-        print(camMaterial);
+        if (obj.material.name == camMaterial.name)
+        {
+            print("OffV2");
+            obj.material = blackMaterial;
+            cam.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
     {
+        print(hand);
         if (activateActionRight.action.WasPressedThisFrame() && hand == 1)
         {
             if (obj.material == camMaterial)
             {
+                print("Off");
                 obj.material = blackMaterial;
                 cam.gameObject.SetActive(false);
             }
             else
             {
+                print("On");
                 obj.material = camMaterial;
                 cam.gameObject.SetActive(true);
             }
@@ -51,11 +59,13 @@ public class TriggerAnimation : MonoBehaviour
         {
             if (obj.material == camMaterial)
             {
+                print("Off");
                 obj.material = blackMaterial;
                 cam.gameObject.SetActive(false);
             }
             else
             {
+                print("On");
                 obj.material = camMaterial;
                 cam.gameObject.SetActive(true);
             }
@@ -68,5 +78,11 @@ public class TriggerAnimation : MonoBehaviour
             hand = -1;
         else if (other.gameObject.name == "Right Controller")
             hand = 1;
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (hand != 0)
+            hand = 0;
     }
 }
