@@ -6,7 +6,10 @@ public class TriggerAnimation : MonoBehaviour
     [SerializeField] private InputActionReference activateActionLeft;
     [SerializeField] private InputActionReference activateActionRight;
     private int hand = 0;
-
+    public Material camMaterial;
+    public Material blackMaterial;
+    public Camera cam;
+    Renderer obj;
     private void OnEnable()
     {
         activateActionLeft.action.Enable();
@@ -17,23 +20,43 @@ public class TriggerAnimation : MonoBehaviour
         activateActionLeft.action.Disable();
     }
 
+    private void Start()
+    {
+        Renderer obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
+        if (obj.material == camMaterial)
+        {
+            obj.material = blackMaterial;
+            cam.gameObject.SetActive(false);
+        }
+    }
+
     private void Update()
     {
         if (activateActionRight.action.WasPressedThisFrame() && hand == 1)
         {
-            Renderer obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
-            if (obj.material.color == Color.black)
-                obj.material.color = Color.white;
+            if (obj.material == camMaterial)
+            {
+                obj.material = blackMaterial;
+                cam.gameObject.SetActive(false);
+            }
             else
-                obj.material.color = Color.black;
+            {
+                obj.material = camMaterial;
+                cam.gameObject.SetActive(true);
+            }
         }
         if (activateActionLeft.action.WasPressedThisFrame() && hand == -1)
         {
-            Renderer obj = GetComponentsInChildren<Transform>()[1].GetComponent<Renderer>();
-            if (obj.material.color == Color.black)
-                obj.material.color = Color.white;
+            if (obj.material == camMaterial)
+            {
+                obj.material = blackMaterial;
+                cam.gameObject.SetActive(false);
+            }
             else
-                obj.material.color = Color.black;
+            {
+                obj.material = camMaterial;
+                cam.gameObject.SetActive(true);
+            }
         }
     }
 
