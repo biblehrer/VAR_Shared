@@ -28,6 +28,8 @@ public class TriggerAnimation : MonoBehaviour
             obj.material = blackMaterial;
             cam.gameObject.SetActive(false);
         }
+        print(obj.material);
+        print(camMaterial);
     }
 
     private void Update()
