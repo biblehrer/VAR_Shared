@@ -16341,7 +16341,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1755429128}
   - component: {fileID: 1755429131}
-  - component: {fileID: 1755429130}
   - component: {fileID: 1755429129}
   m_Layer: 20
   m_Name: PhoneCamera
@@ -16409,14 +16408,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &1755429130
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755429127}
-  m_Enabled: 1
 --- !u!20 &1755429131
 Camera:
   m_ObjectHideFlags: 0
