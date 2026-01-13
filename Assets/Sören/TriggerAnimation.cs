@@ -32,7 +32,6 @@ public class TriggerAnimation : MonoBehaviour
 
     private void Update()
     {
-        print(hand);
         if (activateActionRight.action.WasPressedThisFrame() && hand == 1)
         {
             if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
@@ -68,9 +67,9 @@ public class TriggerAnimation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Left Controller")
-            hand = -1;
-        else if (other.gameObject.name == "Right Controller")
             hand = 1;
+        else if (other.gameObject.name == "Right Controller")
+            hand = -1;
     }
 
     private void OnTriggerExit(Collider collision)
