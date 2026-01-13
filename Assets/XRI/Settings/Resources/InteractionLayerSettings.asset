@@ -32,11 +32,11 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BlackRook
+  - BlackKing
+  - WhiteKing
+  - WhiteQueen
+  - WhiteRook
   - 
   - 
   - 
