@@ -13,11 +13,13 @@ public class TriggerAnimation : MonoBehaviour
     private void OnEnable()
     {
         activateActionLeft.action.Enable();
+        activateActionRight.action.Enable();
     }
 
     private void OnDisable()
     {
         activateActionLeft.action.Disable();
+        activateActionRight.action.Disable();
     }
 
     private void Start()
@@ -67,9 +69,9 @@ public class TriggerAnimation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Left Controller")
-            hand = 1;
-        else if (other.gameObject.name == "Right Controller")
             hand = -1;
+        else if (other.gameObject.name == "Right Controller")
+            hand = 1;
     }
 
     private void OnTriggerExit(Collider collision)
