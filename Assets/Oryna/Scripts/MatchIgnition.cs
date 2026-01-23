@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class MatchIgnition : MonoBehaviour
 {
-    [Header("Flame (child object)")]
     public GameObject flameObject;
-
-    [Header("State")]
     public bool isLit = false;
 
     [HideInInspector] public Rigidbody rb;
 
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         SetFlame(false);
@@ -21,13 +18,7 @@ public class MatchIgnition : MonoBehaviour
         if (isLit) return;
         isLit = true;
         SetFlame(true);
-    }
-
-    public void Extinguish()
-    {
-        if (!isLit) return;
-        isLit = false;
-        SetFlame(false);
+        Debug.Log("MATCH IGNITED!");
     }
 
     void SetFlame(bool on)
