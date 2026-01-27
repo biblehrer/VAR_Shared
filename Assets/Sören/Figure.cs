@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Figure : MonoBehaviour
 {
+    [HideInInspector]
     public Marker marker;
 
     public void ResetTransform()

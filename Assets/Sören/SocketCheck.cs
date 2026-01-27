@@ -16,6 +16,7 @@ public class SocketCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        print(collision.name);
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
@@ -27,6 +28,7 @@ public class SocketCheck : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
+        print(collision.name);
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
