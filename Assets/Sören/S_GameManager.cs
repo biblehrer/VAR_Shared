@@ -1,11 +1,22 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void EventHandler();
+[Serializable]
+public class FigurePosition
+{
+    public bool[] figPos;
+}
+
 public class S_GameManager : MonoBehaviour
 {
     public static S_GameManager Instance;
-    public List<EventHandler> DetMe = new List<EventHandler>();
+    [HideInInspector]
+    public List<Action> DetMe = new List<Action>();
+
+    public bool[] finishedLvl = new bool[10];
+    public List<GameObject> lvlSet = new();
+    public List<FigurePosition> figPos = new();
 
     private void Awake()
     {
@@ -15,29 +26,29 @@ public class S_GameManager : MonoBehaviour
             Destroy(this);
     }
 
-    public bool[] finishedLvl = new bool[10];
-    public List<bool[]> figPos = new List<bool[]>
-    {
-        new bool[5],
-    };
-
-
     public void CheckFigPos(int index)
     {
-        foreach (var i in figPos[index])
+        if (index < 0 || index >= figPos.Count)
+            return;
+
+        foreach (var i in figPos[index].figPos)
         {
             if (!i)
                 return;
         }
 
-        finishedLvl[index] = true;
-        DetMe[index]();
+        if (index < finishedLvl.Length)
+            finishedLvl[index] = true;
+
+        if (index < DetMe.Count && DetMe[index] != null)
+            DetMe[index]();
 
         switch (index)
         {
             case 0:
-                // Do something
+                print("case0");
                 break;
         }
     }
 }
+

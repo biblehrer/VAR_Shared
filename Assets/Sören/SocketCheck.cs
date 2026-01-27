@@ -16,18 +16,20 @@ public class SocketCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<XRGrabInteractable>().interactionLayers == layer)
+        var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
-            S_GameManager.Instance.figPos[puz][posGame] = true;
+            S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
             S_GameManager.Instance.CheckFigPos(puz);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<XRGrabInteractable>().interactionLayers == layer)
+        var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
-            S_GameManager.Instance.figPos[puz][posGame] = false;
+            S_GameManager.Instance.figPos[puz].figPos[posGame] = false;
         }
     }
 
