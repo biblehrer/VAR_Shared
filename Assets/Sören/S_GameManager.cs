@@ -26,6 +26,9 @@ public class S_GameManager : MonoBehaviour
         else
             Destroy(this);
 
+        for (int i = 0; i < finishedLvl.Length; i++)
+            DetMe.Add(() => { });
+
         foreach (var pos in figPos)
         {
             for (int i = 0; i < pos.figPos.Length; i++)
