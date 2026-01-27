@@ -20,6 +20,7 @@ public class SocketCheck : MonoBehaviour
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
         print(grabInteractable + " obj");
         print(grabInteractable.interactionLayers + " Layer");
+        print(layer + " Mask");
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
             S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
