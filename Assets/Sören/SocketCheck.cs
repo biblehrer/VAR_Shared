@@ -16,24 +16,16 @@ public class SocketCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        print(collision.name + "en");
+        print(collision.name + " en");
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
+        print(grabInteractable + " obj");
+        print(grabInteractable.interactionLayers + " Layer");
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
             S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
             S_GameManager.Instance.CheckFigPos(puz);
+            grabInteractable.enabled = false;
             print("hit");
-        }
-    }
-
-    private void OnTriggerExit(Collider collision)
-    {
-        print(collision.name + "ex");
-        var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
-        if (grabInteractable != null && grabInteractable.interactionLayers == layer)
-        {
-            S_GameManager.Instance.figPos[puz].figPos[posGame] = false;
-            print("exe");
         }
     }
 
