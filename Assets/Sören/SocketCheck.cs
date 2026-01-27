@@ -14,22 +14,24 @@ public class SocketCheck : MonoBehaviour
         S_GameManager.Instance.DetMe[puz] += DestroyMe;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
             S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
             S_GameManager.Instance.CheckFigPos(puz);
+            print("hit");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
         var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
             S_GameManager.Instance.figPos[puz].figPos[posGame] = false;
+            print("exe");
         }
     }
 

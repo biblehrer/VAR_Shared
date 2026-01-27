@@ -13,6 +13,7 @@ public class S_GameManager : MonoBehaviour
     public static S_GameManager Instance;
     [HideInInspector]
     public List<Action> DetMe = new List<Action>();
+    public Action MarkerDet;
 
     public bool[] finishedLvl = new bool[10];
     public List<GameObject> lvlSet = new();
@@ -24,6 +25,14 @@ public class S_GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+
+        foreach (var pos in figPos)
+        {
+            for (int i = 0; i < pos.figPos.Length; i++)
+            {
+                pos.figPos[i] = false;
+            }
+        }
     }
 
     public void CheckFigPos(int index)
@@ -46,6 +55,8 @@ public class S_GameManager : MonoBehaviour
         switch (index)
         {
             case 0:
+                MarkerDet();
+                Destroy(lvlSet[0]);
                 print("case0");
                 break;
         }

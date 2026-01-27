@@ -38,13 +38,11 @@ public class TriggerAnimation : MonoBehaviour
         {
             if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
             {
-                print("Off");
                 obj.material = blackMaterial;
                 cam.gameObject.SetActive(false);
             }
             else
             {
-                print("On");
                 obj.material = camMaterial;
                 cam.gameObject.SetActive(true);
             }
@@ -53,13 +51,11 @@ public class TriggerAnimation : MonoBehaviour
         {
             if (obj.material.name.Replace("(Instance)", "").Trim() == camMaterial.name)
             {
-                print("Off");
                 obj.material = blackMaterial;
                 cam.gameObject.SetActive(false);
             }
             else
             {
-                print("On");
                 obj.material = camMaterial;
                 cam.gameObject.SetActive(true);
             }
