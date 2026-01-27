@@ -2543,7 +2543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 816649335}
   m_InteractionLayers:
-    m_Bits: 4194304
+    m_Bits: 4194305
   m_Handedness: 0
   m_AttachTransform: {fileID: 1445108733}
   m_KeepSelectedTargetValid: 1
@@ -31786,7 +31786,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 816649335}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 2097153
+    m_Bits: 2097152
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
