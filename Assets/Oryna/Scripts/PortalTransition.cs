@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.XR.CoreUtils;
 
 public class PortalTransition : MonoBehaviour
 {
@@ -38,14 +39,17 @@ public class PortalTransition : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (triggered) return;
+{
+    if (triggered) return;
 
-        // Чтобы не срабатывало на "любые предметы", можно проверять по тегу Player.
-        // Если у XR Origin нет тега - пока оставим без проверки.
-        triggered = true;
-        StartCoroutine(DoTransition());
-    }
+    // Проверяем: это XR Origin (игрок)?
+    var xrOrigin = other.GetComponentInParent<XROrigin>();
+    if (xrOrigin == null) return; // НЕ игрок → игнорируем
+
+    triggered = true;
+    StartCoroutine(DoTransition());
+}
+
 
     private IEnumerator DoTransition()
     {
