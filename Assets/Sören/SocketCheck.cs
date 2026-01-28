@@ -20,13 +20,13 @@ public class SocketCheck : MonoBehaviour
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
         {
             S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
-            S_GameManager.Instance.CheckFigPos(puz);
             grabInteractable.enabled = false;
             game.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
             game.transform.position = pos.transform.position;
+            game.transform.rotation = Quaternion.identity;
             game.GetComponent<Figure>().marker.DestroyMe();
+            S_GameManager.Instance.CheckFigPos(puz);
 
-            print("hit");
             Destroy(gameObject);
         }
     }
