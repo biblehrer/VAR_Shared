@@ -4307,6 +4307,7 @@ MonoBehaviour:
   posGame: 0
   layer:
     m_Bits: 2097152
+  pos: {fileID: 658253102}
 --- !u!1 &653139109
 GameObject:
   m_ObjectHideFlags: 0
@@ -7346,7 +7347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1260659433}
   - component: {fileID: 1260659435}
-  - component: {fileID: 1260659434}
+  - component: {fileID: 1260659436}
   m_Layer: 0
   m_Name: SocketKingWhite
   m_TagString: Untagged
@@ -7371,27 +7372,6 @@ Transform:
   - {fileID: 658253103}
   m_Father: {fileID: 6745690121524336692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1260659434
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260659432}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.02
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1260659435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7438,6 +7418,27 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &1260659436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260659432}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.065, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1267578865
 GameObject:
   m_ObjectHideFlags: 0
@@ -12916,6 +12917,7 @@ MonoBehaviour:
   posGame: 1
   layer:
     m_Bits: 4194304
+  pos: {fileID: 1445108732}
 --- !u!1 &2136412875
 GameObject:
   m_ObjectHideFlags: 0
