@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,10 +52,16 @@ public class S_GameManager : MonoBehaviour
         switch (index)
         {
             case 0:
-                Destroy(lvlSet[0]);
+                StartCoroutine(KillObject(2f, lvlSet[0]));
                 print("case0");
                 break;
         }
+    }
+
+    private IEnumerator KillObject(float sec, GameObject obj)
+    {
+        yield return new WaitForSeconds(sec);
+        Destroy(obj);
     }
 }
 
