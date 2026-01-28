@@ -7,13 +7,12 @@ public class Marker : MonoBehaviour
 
     private void Start()
     {
-        S_GameManager.Instance.MarkerDet += DestroyMe;
         startPos = fig.transform.position;
         fig.GetComponent<Figure>().marker = this;
     }
 
-    private void DestroyMe()
+    public void DestroyMe()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
