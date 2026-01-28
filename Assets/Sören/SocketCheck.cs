@@ -8,17 +8,13 @@ public class SocketCheck : MonoBehaviour
     public int puz = 0;
     public int posGame = 0;
     public InteractionLayerMask layer;
-
-    private void Start()
-    {
-        S_GameManager.Instance.DetMe[puz] += DestroyMe;
-    }
+    public GameObject pos;
 
     private void OnTriggerEnter(Collider collision)
     {
         print(collision.name + " en");
-        var grabInteractable = collision.gameObject.GetComponent<XRGrabInteractable>();
-        print(grabInteractable + " obj");
+        GameObject game = collision.gameObject;
+        var grabInteractable = game.GetComponent<XRGrabInteractable>();
         print(grabInteractable.interactionLayers.value + " Layer");
         print(layer.value + " Mask");
         if (grabInteractable != null && grabInteractable.interactionLayers == layer)
@@ -26,12 +22,12 @@ public class SocketCheck : MonoBehaviour
             S_GameManager.Instance.figPos[puz].figPos[posGame] = true;
             S_GameManager.Instance.CheckFigPos(puz);
             grabInteractable.enabled = false;
-            print("hit");
-        }
-    }
+            game.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            game.transform.position = pos.transform.position;
+            game.GetComponent<Figure>().marker.DestroyMe();
 
-    public void DestroyMe()
-    {
-        Destroy(gameObject);
+            print("hit");
+            Destroy(gameObject);
+        }
     }
 }

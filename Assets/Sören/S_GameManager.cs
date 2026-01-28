@@ -11,9 +11,6 @@ public class FigurePosition
 public class S_GameManager : MonoBehaviour
 {
     public static S_GameManager Instance;
-    [HideInInspector]
-    public List<Action> DetMe = new List<Action>();
-    public Action MarkerDet;
 
     public bool[] finishedLvl = new bool[10];
     public List<GameObject> lvlSet = new();
@@ -26,9 +23,6 @@ public class S_GameManager : MonoBehaviour
         else
             Destroy(this);
 
-        for (int i = 0; i < finishedLvl.Length; i++)
-            DetMe.Add(() => { });
-
         foreach (var pos in figPos)
         {
             for (int i = 0; i < pos.figPos.Length; i++)
@@ -40,6 +34,8 @@ public class S_GameManager : MonoBehaviour
 
     public void CheckFigPos(int index)
     {
+        print("Check for " + index);
+
         if (index < 0 || index >= figPos.Count)
             return;
 
@@ -52,13 +48,9 @@ public class S_GameManager : MonoBehaviour
         if (index < finishedLvl.Length)
             finishedLvl[index] = true;
 
-        if (index < DetMe.Count && DetMe[index] != null)
-            DetMe[index]();
-
         switch (index)
         {
             case 0:
-                MarkerDet();
                 Destroy(lvlSet[0]);
                 print("case0");
                 break;
