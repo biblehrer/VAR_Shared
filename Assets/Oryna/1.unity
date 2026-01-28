@@ -702,7 +702,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.04
-  m_Center: {x: -0.09, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &110731431
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,27 +845,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.18022387
+      value: -0.274708
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7789728
+      value: -0.6494986
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.314336
+      value: -0.23627067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5117751
+      value: -0.66847837
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -182.347
+      value: -182.348
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 65.697
+      value: -92.56201
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f496c7ea91a832e49b825ecbaac26467, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1650227170}
   m_Colliders:
   - {fileID: 315338534}
   m_InteractionLayers:
@@ -1336,7 +1336,7 @@ Transform:
   m_GameObject: {fileID: 381105201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.072, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14037,7 +14037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2000969531}
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -14333,7 +14334,7 @@ Transform:
   m_GameObject: {fileID: 2070238520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0081, y: 0.0089, z: -0.0264}
+  m_LocalPosition: {x: 0.0004, y: 0.0024, z: -0.0329}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
