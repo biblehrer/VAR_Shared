@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Key_C : MonoBehaviour
 {
+    public GameObject part;
     public GameObject door;
     private bool openDoor = false;
     private float speed = 5f;
@@ -43,6 +44,14 @@ public class Key_C : MonoBehaviour
             Destroy(other.gameObject);
             openDoor = true;
             StartCoroutine(DoorAnimation(speed));
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(part);
         }
     }
 

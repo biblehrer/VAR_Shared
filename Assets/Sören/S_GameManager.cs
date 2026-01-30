@@ -13,6 +13,8 @@ public class S_GameManager : MonoBehaviour
 {
     public static S_GameManager Instance;
 
+    public ParticleSystem system;
+
     public bool[] finishedLvl = new bool[10];
     public List<GameObject> lvlSet = new();
     public List<FigurePosition> figPos = new();
@@ -60,6 +62,9 @@ public class S_GameManager : MonoBehaviour
 
     private IEnumerator DisableObj(float sec, int index)
     {
+        if (system != null)
+            system.Play();
+
         yield return new WaitForSeconds(sec);
 
         lvlSet[index].SetActive(false);
