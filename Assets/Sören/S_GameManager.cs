@@ -31,6 +31,12 @@ public class S_GameManager : MonoBehaviour
                 pos.figPos[i] = false;
             }
         }
+
+        for (int i = 0; i < lvlSet.Count; i++)
+        {
+            if (i > 0)
+                lvlSet[i].SetActive(false);
+        }
     }
 
     public void CheckFigPos(int index)
@@ -49,19 +55,19 @@ public class S_GameManager : MonoBehaviour
         if (index < finishedLvl.Length)
             finishedLvl[index] = true;
 
-        switch (index)
-        {
-            case 0:
-                StartCoroutine(KillObject(2f, lvlSet[0]));
-                print("case0");
-                break;
-        }
+        StartCoroutine(DisableObj(2f, index));
     }
 
-    private IEnumerator KillObject(float sec, GameObject obj)
+    private IEnumerator DisableObj(float sec, int index)
     {
         yield return new WaitForSeconds(sec);
-        Destroy(obj);
+
+        lvlSet[index].SetActive(false);
+
+        if (index + 1 < lvlSet.Count)
+            lvlSet[index + 1].SetActive(true);
+        else
+            print("Game Finished");
     }
 }
 

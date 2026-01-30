@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Anchor
   - Event1
+  - Chest
+  - Target
+  - Schloss
   layers:
   - Default
   - TransparentFX
