@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if ((shootActionLeft.action.WasPressedThisFrame() || shootActionRight.action.WasPressedThisFrame()) && timer < 0)
+        if ((shootActionLeft.action.WasPressedThisFrame() || shootActionRight.action.WasPressedThisFrame()) && timer <= 0)
         {
             Shoot();
             timer = 2f;
